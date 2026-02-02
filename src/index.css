@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dental Clinic Color Palette - Soft Blue Medical Theme */
+    --background: 200 30% 98%;
+    --foreground: 210 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 15%;
+
+    /* Primary - Sky Blue */
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 199 89% 65%;
+    --primary-dark: 199 89% 38%;
+
+    /* Secondary - Light Blue */
+    --secondary: 200 60% 94%;
+    --secondary-foreground: 199 89% 38%;
+
+    /* Accent - Cyan */
+    --accent: 187 85% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 200 30% 96%;
+    --muted-foreground: 210 20% 50%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 30% 90%;
+    --input: 200 30% 90%;
+    --ring: 199 89% 48%;
+
+    --radius: 1rem;
+
+    /* Custom Dental Theme Colors */
+    --dental-sky: 199 89% 48%;
+    --dental-sky-light: 199 80% 92%;
+    --dental-cyan: 187 85% 53%;
+    --dental-blue-dark: 210 70% 30%;
+    --dental-gradient-start: 200 80% 95%;
+    --dental-gradient-end: 199 60% 85%;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(199 89% 48% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(199 89% 48% / 0.2);
+    --shadow-hover: 0 12px 40px -8px hsl(199 89% 48% / 0.25);
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 40% 8%;
+    --foreground: 200 30% 98%;
+
+    --card: 210 40% 12%;
+    --card-foreground: 200 30% 98%;
+
+    --popover: 210 40% 12%;
+    --popover-foreground: 200 30% 98%;
+
+    --primary: 199 89% 55%;
+    --primary-foreground: 210 40% 8%;
+    --primary-light: 199 89% 65%;
+    --primary-dark: 199 89% 45%;
+
+    --secondary: 210 40% 18%;
+    --secondary-foreground: 199 89% 65%;
+
+    --accent: 187 85% 53%;
+    --accent-foreground: 210 40% 8%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 200 30% 70%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 199 89% 55%;
+
+    --dental-sky: 199 89% 55%;
+    --dental-sky-light: 199 40% 20%;
+    --dental-cyan: 187 85% 45%;
+    --dental-blue-dark: 210 70% 60%;
+    --dental-gradient-start: 210 40% 12%;
+    --dental-gradient-end: 210 50% 18%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  [dir="rtl"] body,
+  [dir="rtl"] {
+    font-family: 'Cairo', sans-serif;
+  }
+}
+
+@layer components {
+  .dental-card {
+    @apply bg-card rounded-2xl shadow-[var(--shadow-card)] border border-border/50 transition-all duration-300;
+  }
+  
+  .dental-card:hover {
+    @apply shadow-[var(--shadow-hover)] -translate-y-1;
+  }
+
+  .dental-gradient {
+    background: linear-gradient(135deg, hsl(var(--dental-gradient-start)) 0%, hsl(var(--dental-gradient-end)) 100%);
+  }
+
+  .dental-gradient-hero {
+    background: linear-gradient(180deg, hsl(var(--dental-sky-light)) 0%, hsl(var(--background)) 100%);
+  }
+
+  .dental-text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .dental-btn-primary {
+    @apply bg-primary text-primary-foreground rounded-full px-8 py-3 font-semibold transition-all duration-300 shadow-[var(--shadow-soft)];
+  }
+
+  .dental-btn-primary:hover {
+    @apply shadow-[var(--shadow-hover)] scale-105;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+  }
+
+  .dental-section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground;
+  }
+
+  .dental-input {
+    @apply w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from { 
+      opacity: 0; 
+      transform: translateX(50px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from { 
+      opacity: 0; 
+      transform: translateX(-50px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.9);
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Reviews carousel: slide left-to-right (content moves right) */
+  @keyframes reviews-slide-ltr {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes reviews-slide-ltr-rtl {
+    from { transform: translateX(0); }
+    to { transform: translateX(50%); }
+  }
+
+  .animate-reviews-slide {
+    animation: reviews-slide-ltr 25s linear infinite;
+  }
+
+  [dir="rtl"] .animate-reviews-slide {
+    animation-name: reviews-slide-ltr-rtl;
+  }
+
+  .animate-reviews-slide[data-paused="true"],
+  .animate-reviews-slide.paused {
+    animation-play-state: paused;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+.sign{
+  font-family: 'Dancing Script', cursive;
+}
