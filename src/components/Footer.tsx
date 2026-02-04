@@ -169,16 +169,19 @@ const Footer = () => {
         </svg>
 
         {/* Content container - Dr.Sara at top, social icons below */}
-        <div className="absolute  inset-0 flex flex-col items-center justify-center z-10 py-8">
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 py-8 px-4">
           {/* Dr.Sara - Appears at top as a sign */}
-          <div className="mb-5 slide-down mt-20">
-            <h2 className="text-white text-4xl md:text-6xl tracking-wide glow-text font-bold sign">
-              Dr.Sara Ibrahim
+          <div className=" slide-down mt-20 md:mt-20 text-center">
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide glow-text font-bold sign drop-shadow-[0_0_20px_rgba(0, 0, 0, 0.9)] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+              Dr. Sarah Ibrahim
             </h2>
+            <p className="text-white/70 text-sm md:text-base mt-2 font-medium">
+              Professional Dental Care
+            </p>
           </div>
           
           {/* Social Icons - Below Dr.Sara */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4 mt-6 md:mt-8">
     <div className="social-button">
       <button className="relative w-12 h-12 rounded-full group">
         <div className="floater w-full h-full absolute top-0 left-0 bg-violet-400 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl" />

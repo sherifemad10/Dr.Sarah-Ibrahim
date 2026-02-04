@@ -32,22 +32,27 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
         isScrolled
-          ? 'bg-card/95 backdrop-blur-md shadow-card'
-          : 'bg-transparent'
+          ? 'bg-card/95 backdrop-blur-md shadow-card border-b border-border/50'
+          : 'bg-transparent hover:bg-card/50 transition-colors duration-500'
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 w-full">
+        <div className="flex items-center justify-between h-20 w-full">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+          <a href="#home" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-primary-foreground font-bold text-xl">🦷</span>
             </div>
-            <span className="text-xl font-bold text-foreground">
-              {isRTL ? 'عيادة يونيدنت' : 'Unidental Clinic'}
-            </span>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-foreground hidden sm:inline">
+                {isRTL ? 'عيادة يونيدنت' : 'Unidental Clinic'}
+              </span>
+              <span className="text-xs font-semibold text-primary">
+                {isRTL ? 'د. سارة إبراهيم' : 'Dr. Sara'}
+              </span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}

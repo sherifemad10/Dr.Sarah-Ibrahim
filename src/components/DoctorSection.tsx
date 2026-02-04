@@ -63,11 +63,14 @@ const DoctorSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="dental-section-title mb-2">{t('doctor.title')}</h2>
-            <p className="text-lg py-4 mb-8">
+            <h2 className="dental-section-title mb-2 text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              {t('doctor.title')}
+            </h2>
+            <p className="text-base md:text-lg py-4 mb-8 text-foreground/90 leading-relaxed">
               {t('doctor.description')}
             </p>
-            <p className="text-xl text-primary font-medium mb-8">
+            <p className="text-xl md:text-2xl text-primary font-bold mb-8 flex items-center gap-2">
+              <span className="w-2 h-2 bg-primary rounded-full"></span>
               {t('doctor.subtitle')}
             </p>
 
