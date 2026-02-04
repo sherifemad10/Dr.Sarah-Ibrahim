@@ -46,11 +46,11 @@ const Header = () => {
               <span className="text-primary-foreground font-bold text-xl">🦷</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-foreground hidden sm:inline">
+              <span className="text-lg font-bold text-foreground  sm:inline">
                 {isRTL ? 'عيادة يونيدنت' : 'Unidental Clinic'}
               </span>
               <span className="text-xs font-semibold text-primary">
-                {isRTL ? 'د. سارة إبراهيم' : 'Dr. Sara'}
+                {isRTL ? 'د. سارة إبراهيم' : 'Dr. Sarah Ibrahim'}
               </span>
             </div>
           </a>
